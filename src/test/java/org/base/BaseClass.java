@@ -31,6 +31,10 @@ public class BaseClass {
 	   js = (JavascriptExecutor)driver;
 	   js.executeScript("arguments[0].scrollIntoView(true)", ref);
 	}
+	public static void launchUrl(String Url) {
+		driver.get(Url);
+
+	}
 	
 	
 	

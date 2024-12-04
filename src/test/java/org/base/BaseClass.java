@@ -1,6 +1,7 @@
 package org.base;
 
 import java.time.Duration;
+import java.util.Date;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +26,7 @@ public class BaseClass {
 		ref.sendKeys(Value);
 	}
 	public static  void implictWait() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	public static void scrollDown(WebElement ref) {
 	   js = (JavascriptExecutor)driver;
@@ -33,6 +34,20 @@ public class BaseClass {
 	}
 	public static void launchUrl(String Url) {
 		driver.get(Url);
+	}
+	public static void clickBtn(WebElement ref) {
+		ref.click();
+	}
+	public static void generateEmail() {
+		Date d = new Date();
+		String datestring = d.toString();
+		String datereplaceAll = datestring.replaceAll("\\s", "");
+		String datereplaceAllcolumn = datereplaceAll.replaceAll("\\:", "");
+		String emaailTimeStam = datereplaceAllcolumn+"@gmail.com";
+		//System.out.println(d);
+	}
+	public static void quitBrowser() {
+		driver.quit();
 
 	}
 	
